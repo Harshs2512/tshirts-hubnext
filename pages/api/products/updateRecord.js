@@ -1,5 +1,5 @@
-import connectDB from 'db/newdb';
-import Curriculum from 'models/siteSettings/bcaPage/curriculumModel';
+import connectDB from '@/db/newdb';
+import Curriculum from '@/models/categoryModel';
 
 const handler = (req, res) => {
     if (req.method === 'PUT') {
