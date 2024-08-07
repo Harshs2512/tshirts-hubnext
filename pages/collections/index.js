@@ -329,7 +329,7 @@ const Index = () => {
                             <ul className=" m-0 list-none bg-white">
                                 <li className="relative border-b-2 border-stone-300 h-full">
 
-                                    <a
+                                    <div
                                         className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none "
                                         onClick={handleClosetheme}
                                     >
@@ -350,7 +350,7 @@ const Index = () => {
                                                 />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosetheme ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {categories && categories.map((c, index) => (
                                             <Checkbox key={index}
@@ -361,7 +361,7 @@ const Index = () => {
                                     </div>
                                 </li>
                                 <li className="border-b-2 border-stone-300">
-                                    <a
+                                    <div
                                         className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
                                         onClick={handleClosecolor}
                                     >
@@ -380,7 +380,7 @@ const Index = () => {
                                                 />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosecolor ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {color &&
                                             color.colors.map((c, index) => (
@@ -397,7 +397,7 @@ const Index = () => {
                                     </div>
                                 </li>
                                 <li className="relative border-b-2 border-stone-300">
-                                    <a
+                                    <div
                                         className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
                                         onClick={handleClosesize}
                                     >
@@ -416,7 +416,7 @@ const Index = () => {
                                                 />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosesize ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {size &&
                                             size.sizes.map((sz, index) => (
@@ -433,7 +433,7 @@ const Index = () => {
                                     </div>
                                 </li>
                                 <li className="relative border-b-2 border-stone-300">
-                                    <a
+                                    <div
                                         className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
                                         onClick={handleCloseprice}
                                     >
@@ -452,7 +452,7 @@ const Index = () => {
                                                 />
                                             </svg>
                                         </span>
-                                    </a>
+                                    </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isCloseprice ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         <Radio.Group onChange={(e) => setRadio(e.target.value)}>
                                             {Prices?.map((p, index) => (
