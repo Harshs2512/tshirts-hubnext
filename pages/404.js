@@ -1,5 +1,4 @@
-
-import { GeeksSEO } from '@/widgets/seo/GeeksSEO';
+import { GeeksSEO } from "@/widgets";
 
 // import blank layout, header and footer to override default layout 
 // import NotFound from 'layouts/marketing/NotFound';
