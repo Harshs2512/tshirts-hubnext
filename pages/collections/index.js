@@ -78,7 +78,7 @@ const Index = () => {
     const getAllProducts = async () => {
         try {
             const res = await axios.get("/api/products/getRecord");
-            if(res.status===200){
+            if (res.status === 200) {
                 setProducts(res.data)
             }
             setFilterCheck(true);
@@ -240,10 +240,10 @@ const Index = () => {
                     <div>(200) Products</div>
                 </div>
                 <div className='col-span-4 grid grid-cols-7'>
-                    {filterList && filterList.map((f) => (
+                    {filterList && filterList.map((f,index) => (
                         <div
                             className="[word-wrap: break-word] w-20 my-[5px] flex h-[32px] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none active:bg-[#cacfd1]"
-                            key={f}
+                            key={index}
                         >
                             {f}
                             <button onClick={() => removeSingleFilter(f)}>
@@ -297,8 +297,8 @@ const Index = () => {
                             className={`absolute z-[1000] w-36 float-left m-0 list-none overflow-hidden rounded-lg border-none  bg-white bg-clip-padding text-left text-base shadow-lg ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-200 `}
                         >
                             {/* Dropdown menu options */}
-                            {categories && categories.map((c) => (
-                                <li>
+                            {categories && categories.map((c,index) => (
+                                <li key={index}>
                                     <Link href={`/search/category/${c.slug}`}
                                         className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-800 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:text-neutral-400"
                                     >
@@ -359,8 +359,8 @@ const Index = () => {
                                         </span>
                                     </a>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosetheme ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        {categories && categories.map((c) => (
-                                            <Checkbox key={c._id}
+                                        {categories && categories.map((c,index) => (
+                                            <Checkbox key={index}
                                                 onChange={(e) => handleFilter(e.target.checked, c._id, c.catName,)} id='check'>
                                                 {c.catName}
                                             </Checkbox>
@@ -391,9 +391,9 @@ const Index = () => {
                                     </a>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosecolor ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {color &&
-                                            color.colors.map((c) => (
+                                            color.colors.map((c,index) => (
                                                 <Checkbox
-                                                    key={c}
+                                                    key={index}
                                                     onChange={(e) =>
                                                         handleFilter(e.target.checked, c, c, c, true)
                                                     }
@@ -427,9 +427,9 @@ const Index = () => {
                                     </a>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosesize ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {size &&
-                                            size.sizes.map((sz) => (
+                                            size.sizes.map((sz,index) => (
                                                 <Checkbox
-                                                    key={sz}
+                                                    key={index}
                                                     onChange={(e) =>
                                                         handleSizeFilter(e.target.checked, sz, sz, sz, true)
                                                     }
@@ -463,8 +463,8 @@ const Index = () => {
                                     </a>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isCloseprice ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-                                            {Prices?.map((p) => (
-                                                <div key={p._id}>
+                                            {Prices?.map((p,index) => (
+                                                <div key={index}>
                                                     <Radio value={p.array}>{p.name}</Radio>
                                                 </div>
                                             ))}
@@ -486,14 +486,14 @@ const Index = () => {
                                         <Spin size="large" />
                                     </div>
                                 ) : (<>
-                                    {products && products.map((p) => (
+                                    {products && products.map((p, index) => (
                                         <div
-                                            key={p._id} className="block bg-gray-100/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-hidden overflow-y-hidden">
+                                            key={index} className="block bg-gray-100/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-hidden overflow-y-hidden">
                                             <Link href={`/product/${p.slug}`}>
-                                                    <button disabled={!wishlist.find((item) => item._id === p._id) ? false : true} className="relative rounded-full w-10 h-10 p-2 bg-gray-200/50 top-[2%] xs:left-[72%] sm:left-[78%] left-[70%] hover:bg-white duration-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] z-10"
-                                                        onClick={() => { handleAddToWishlist(p) }}>
-                                                        <UilHeartAlt className={`${wishlist.find((item) => item._id === p._id) ? 'text-red-500 animate-jump-in animate-delay-300 animate-once ' : 'text-gray-500'} `} />
-                                                    </button>
+                                                <button disabled={!wishlist.find((item) => item._id === p._id) ? false : true} className="relative rounded-full w-10 h-10 p-2 bg-gray-200/50 top-[2%] xs:left-[72%] sm:left-[78%] left-[70%] hover:bg-white duration-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] z-10"
+                                                    onClick={() => { handleAddToWishlist(p) }}>
+                                                    <UilHeartAlt className={`${wishlist.find((item) => item._id === p._id) ? 'text-red-500 animate-jump-in animate-delay-300 animate-once ' : 'text-gray-500'} `} />
+                                                </button>
                                                 <img
                                                     className="object-cover transition-transform duration-300 transform hover:scale-125 hover:rotate-6 -mt-10 w-80 h-80 bg-gray-500"
                                                     src={`http://localhost:8000/api/v1/product-photo/${p._id}`}
@@ -561,8 +561,8 @@ const Index = () => {
                                 <li className="relative border-b-2 border-stone-300 h-full mb-3 rounded-lg">
                                     <h1 className='ml-4 text-lg'>Theme</h1>
                                     <div className="px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100">
-                                        {categories && categories.map((c) => (
-                                            <Checkbox key={c._id}
+                                        {categories && categories.map((c, index) => (
+                                            <Checkbox key={index}
                                                 onChange={(e) => handleFilter(e.target.checked, c._id, c.catName,)} id='check'>
                                                 {c.catName}
                                             </Checkbox>
@@ -574,9 +574,9 @@ const Index = () => {
                                     <h1 className='ml-4 text-lg'>Colors</h1>
                                     <div className="px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100">
                                         {color &&
-                                            color.colors.map((c) => (
+                                            color.colors.map((c, index) => (
                                                 <Checkbox
-                                                    key={c}
+                                                    key={index}
                                                     onChange={(e) =>
                                                         handleFilter(e.target.checked, c, c, c, true)
                                                     }
@@ -591,9 +591,9 @@ const Index = () => {
                                     <h1 className='ml-4 text-lg'>Sizes</h1>
                                     <div className="px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100">
                                         {size &&
-                                            size.sizes.map((sz) => (
+                                            size.sizes.map((sz, index) => (
                                                 <Checkbox
-                                                    key={sz}
+                                                    key={index}
                                                     onChange={(e) =>
                                                         handleSizeFilter(e.target.checked, sz, sz, sz, true)
                                                     }
@@ -608,8 +608,8 @@ const Index = () => {
                                     <h1 className='ml-4 text-lg'>Prices</h1>
                                     <div className="px-10 py-2 transition-[opacity,margin] duration-100">
                                         <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-                                            {Prices?.map((p) => (
-                                                <div key={p._id}>
+                                            {Prices?.map((p, index) => (
+                                                <div key={index}>
                                                     <Radio value={p.array} className='py-2'>{p.name}</Radio>
                                                 </div>
                                             ))}

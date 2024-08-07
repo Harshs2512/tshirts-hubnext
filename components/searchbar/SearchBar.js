@@ -75,8 +75,8 @@ const SearchBar = () => {
                         <p className="text-sm text-blue-950 font-medium">CATEGORY</p>
                         <hr />
                         <div className="grid rows-flow-dense py-2">
-                            {results.map((result) => (
-                                <a href={`/search/category/${result.category._id}`}>
+                            {results.map((result, index) => (
+                                <a href={`/search/category/${result.category._id}`} key={index}>
                                     <div key={result.id} className="">
                                         <p className="text-gray-800 font-semibold ml-1">{result.category.catName}</p>
                                     </div>
@@ -88,8 +88,8 @@ const SearchBar = () => {
                         <p className="text-sm text-blue-950 font-medium">PRODUCTS</p>
                         <hr />
                         <div className="grid grid-cols-2 rows-flow-dense py-2 gap-5">
-                            {results.map((result) => (
-                                <Link href={`/product/${result.slug}`}>
+                            {results.map((result,index) => (
+                                <Link href={`/product/${result.slug}`} key={index}>
                                     <div key={result.id} className="">
                                         <img className="w-20" src={`/images/1.jpg`} alt={result.title} />
                                         <p className="text-gray-800 font-bold ml-5">{result.title}</p>

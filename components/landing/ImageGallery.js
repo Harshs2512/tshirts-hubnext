@@ -9,7 +9,7 @@ const ImageGallery = ({mlenght}) => {
         <Fragment>
             <div className="grid grid-cols-3 gap-3">
                 {mlenght.map((item, index) => (
-                    <Link href={'item'}>
+                    <Link href={'item'} key={index}>
                         <div className="after:content group relative block w-full cursor-pointer after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight justify-center align-center">
                             <Image
                                 alt="Next.js Conf photo"
