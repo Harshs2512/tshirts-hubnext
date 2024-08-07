@@ -11,7 +11,7 @@ import ImageGallery from "@/components/landing/ImageGallery";
 
 const inter = Montserrat({ subsets: ["latin"], weight: ['500'] });
 
-export default function Home() {
+const Home = () => {
   const router = usePathname();
   const pageURL = process.env.baseURL + router.pathname;
   const title = "Tshirts hub Indias favirut brand";
@@ -217,3 +217,5 @@ export default function Home() {
     </Fragment>
   );
 }
+
+export default Home;

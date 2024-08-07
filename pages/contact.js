@@ -12,8 +12,6 @@ const Contact = () => {
 	);
 };
 
-Contact.Layout = BlankLayout;
-
 export default Contact;
 {/* <main>
 				<section className="bg-white container-fluid">
