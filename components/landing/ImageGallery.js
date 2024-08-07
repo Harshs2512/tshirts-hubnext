@@ -4,7 +4,6 @@ import Link from "next/link";
 const { Fragment } = require("react");
 
 const ImageGallery = ({mlenght}) => {
-    console.log(mlenght)
     return (
         <Fragment>
             <div className="grid grid-cols-3 gap-3">

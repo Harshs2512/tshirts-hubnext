@@ -308,7 +308,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:grid lg:grid-cols-10 py-36">
+            {/* <div className="lg:grid lg:grid-cols-10 py-36">
                 <div className='lg:col-span-2'>
                     <nav
                         id="sidenav-2"
@@ -623,7 +623,7 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-            </div>}
+            </div>} */}
         </>
     )
 }
