@@ -12,229 +12,229 @@ import { usePathname } from 'next/navigation'
 
 
 const Index = () => {
-    // const Prices = [
-    //     {
-    //         _id: 0,
-    //         name: "100 to 300",
-    //         array: [100, 300],
-    //     },
-    //     {
-    //         _id: 1,
-    //         name: "300 to 500",
-    //         array: [300, 500],
-    //     },
-    //     {
-    //         _id: 2,
-    //         name: "500 to 700",
-    //         array: [500, 700],
-    //     },
-    //     {
-    //         _id: 3,
-    //         name: "700 to 900",
-    //         array: [700, 900],
-    //     },
-    //     {
-    //         _id: 4,
-    //         name: "100 or more",
-    //         array: [100, 9999],
-    //     }
-    // ];
-    // const pathname = usePathname();
-    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    // const [isClosetheme, setIsClosetheme] = useState(false);
-    // const [isClosecolor, setIsClosecolor] = useState(false);
-    // const [isClosesize, setIsClosesize] = useState(false);
-    // const [isCloseprice, setIsCloseprice] = useState(false);
-    // const [products, setProducts] = useState();
-    // const [categories, setCategories] = useState('');
-    // const [checked, setChecked] = useState([]);
-    // const [selectedColors, setSelectedColors] = useState([]);
-    // const [selectedSizes, setSelectedSizes] = useState([]);
-    // const [radio, setRadio] = useState([]);
-    // const [filterList, setFilter1] = useState([]);
-    // const [filterCheck, setFilterCheck] = useState(false);
-    // const [wishlist, setWishlist] = useState([]);
-    // const [liked, setLiked] = useState(false);
-    // const [isFilter, setIsFilter] = useState(false);
-    // const [loading, setLoading] = useState(false);
+    const Prices = [
+        {
+            _id: 0,
+            name: "100 to 300",
+            array: [100, 300],
+        },
+        {
+            _id: 1,
+            name: "300 to 500",
+            array: [300, 500],
+        },
+        {
+            _id: 2,
+            name: "500 to 700",
+            array: [500, 700],
+        },
+        {
+            _id: 3,
+            name: "700 to 900",
+            array: [700, 900],
+        },
+        {
+            _id: 4,
+            name: "100 or more",
+            array: [100, 9999],
+        }
+    ];
+    const pathname = usePathname();
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isClosetheme, setIsClosetheme] = useState(false);
+    const [isClosecolor, setIsClosecolor] = useState(false);
+    const [isClosesize, setIsClosesize] = useState(false);
+    const [isCloseprice, setIsCloseprice] = useState(false);
+    const [products, setProducts] = useState();
+    const [categories, setCategories] = useState('');
+    const [checked, setChecked] = useState([]);
+    const [selectedColors, setSelectedColors] = useState([]);
+    const [selectedSizes, setSelectedSizes] = useState([]);
+    const [radio, setRadio] = useState([]);
+    const [filterList, setFilter1] = useState([]);
+    const [filterCheck, setFilterCheck] = useState(false);
+    const [wishlist, setWishlist] = useState([]);
+    const [liked, setLiked] = useState(false);
+    const [isFilter, setIsFilter] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    // const handleDropdownToggle = () => {
-    //     setIsDropdownOpen(!isDropdownOpen);
-    // };
-    // const handleClosetheme = () => {
-    //     setIsClosetheme(!isClosetheme)
-    // };
-    // const handleClosecolor = () => {
-    //     setIsClosecolor(!isClosecolor)
-    // }
-    // const handleClosesize = () => {
-    //     setIsClosesize(!isClosesize)
-    // }
-    // const handleCloseprice = () => {
-    //     setIsCloseprice(!isCloseprice)
-    // }
+    const handleDropdownToggle = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+    const handleClosetheme = () => {
+        setIsClosetheme(!isClosetheme)
+    };
+    const handleClosecolor = () => {
+        setIsClosecolor(!isClosecolor)
+    }
+    const handleClosesize = () => {
+        setIsClosesize(!isClosesize)
+    }
+    const handleCloseprice = () => {
+        setIsCloseprice(!isCloseprice)
+    }
 
-    // //Products
-    // const getAllProducts = async () => {
-    //     try {
-    //         const res = await axios.get("/api/products/getRecord");
-    //         if (res.status === 200) {
-    //             setProducts(res.data)
-    //         }
-    //         setFilterCheck(true);
-    //     }
-    //     catch (error) {
-    //         console.log(error)
+    //Products
+    const getAllProducts = async () => {
+        try {
+            const res = await axios.get("/api/products/getRecord");
+            if (res.status === 200) {
+                setProducts(res.data)
+            }
+            setFilterCheck(true);
+        }
+        catch (error) {
+            console.log(error)
 
-    //     }
-    // };
-
-
-    // //get all cat
-    // const getAllCategory = async () => {
-    //     try {
-    //         const { data } = await axios.get("/api/category/show_category/");
-    //         if (data.success) {
-    //             setCategories(data.categories);
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     getAllCategory();
-    // }, []);
+        }
+    };
 
 
-    // // filter by cat
-    // const handleFilter = (value, id, catName, c, isColor) => {
-    //     let all = [...checked];
-    //     let filter1 = [...filterList];
+    //get all cat
+    const getAllCategory = async () => {
+        try {
+            const { data } = await axios.get("/api/category/show_category/");
+            if (data.success) {
+                setCategories(data.categories);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
-    //     if (isColor) {
-    //         // Handle color checkboxes
-    //         if (value) {
-    //             all.push(id);
-    //             filter1.push(catName);
-    //             setSelectedColors([...selectedColors, c]);
-    //         } else {
-    //             all = all.filter((c) => c !== id);
-    //             filter1 = filter1.filter((c) => c !== catName);
-    //             setSelectedColors(selectedColors.filter((color) => color !== c));
-    //         }
-    //     } else {
-    //         // Handle other filters
-    //         if (value) {
-    //             all.push(id);
-    //             filter1.push(catName);
-    //         } else {
-    //             all = all.filter((c) => c !== id);
-    //             filter1 = filter1.filter((c) => c !== catName);
-    //         }
-    //     }
-
-    //     setChecked(all);
-    //     setFilter1(filter1);
-    // };
-
-    // const handleSizeFilter = (value, id, sz, isSize) => {
-    //     let all = [...checked];
-    //     let filter1 = [...filterList];
-    //     console.log(sz)
-
-    //     if (isSize) {
-    //         // Handle color checkboxes
-    //         if (value) {
-    //             all.push(id);
-    //             filter1.push(sz);
-    //             setSelectedSizes([...selectedSizes, sz]);
-    //         } else {
-    //             all = all.filter((c) => c !== id);
-    //             filter1 = filter1.filter((c) => c !== sz);
-    //             setSelectedSizes(selectedSizes.filter((s) => s !== sz));
-    //         }
-    //     } else {
-    //         // Handle other filters
-    //         if (value) {
-    //             all.push(id);
-    //             filter1.push(sz);
-    //         } else {
-    //             all = all.filter((c) => c !== id);
-    //             filter1 = filter1.filter((c) => c !== size);
-    //         }
-    //     }
-
-    //     setChecked(all);
-    //     setFilter1(filter1);
-    // };
-
-    // useEffect(() => {
-    //     if (checked.length === 0) {
-    //         getAllProducts();
-    //     } else {
-    //         filterProduct();
-    //     }
-    // }, [checked]);
-
-    // useEffect(() => {
-    //     if (radio.length === 0) {
-    //         getAllProducts();
-    //     } else {
-    //         filterProduct();
-    //     }
-    //     window.scrollTo(0, 0);
-    // }, [radio]);
+    useEffect(() => {
+        getAllCategory();
+    }, []);
 
 
-    // //get filterd product
-    // const filterProduct = async () => {
-    //     setLoading(true)
-    //     try {
-    //         const { data } = await axios.post("/api/v1/product-filters", {
-    //             checked,
-    //             radio,
-    //             selectedColors,
-    //             selectedSizes
-    //         });
-    //         setProducts(data?.products);
-    //         setFilterCheck(false);
-    //         console.log(products)
-    //         setLoading(false)
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
+    // filter by cat
+    const handleFilter = (value, id, catName, c, isColor) => {
+        let all = [...checked];
+        let filter1 = [...filterList];
 
-    // const removeSingleFilter = (filter) => {
-    //     const updatedChecked = checked.splice(filter)
-    //     setChecked(updatedChecked);
-    //     const updatedFilter = filterList.filter((f) => f !== filter);
-    //     setFilter1(updatedFilter);
-    //     filterProduct();
-    // };
+        if (isColor) {
+            // Handle color checkboxes
+            if (value) {
+                all.push(id);
+                filter1.push(catName);
+                setSelectedColors([...selectedColors, c]);
+            } else {
+                all = all.filter((c) => c !== id);
+                filter1 = filter1.filter((c) => c !== catName);
+                setSelectedColors(selectedColors.filter((color) => color !== c));
+            }
+        } else {
+            // Handle other filters
+            if (value) {
+                all.push(id);
+                filter1.push(catName);
+            } else {
+                all = all.filter((c) => c !== id);
+                filter1 = filter1.filter((c) => c !== catName);
+            }
+        }
 
-    // const handleAddToWishlist = (p) => {
-    //     setLiked(!liked)
-    //     console.log(liked)
-    //     setWishlist([...wishlist, p]);
-    //     localStorage.setItem(
-    //         "wishlist",
-    //         JSON.stringify([...wishlist, p])
-    //     );
-    //     toast.success("Item Added to Wishlist");
-    // };
+        setChecked(all);
+        setFilter1(filter1);
+    };
 
-    // const color = {
-    //     colors: ['red', 'yellow']
-    // }
-    // const size = {
-    //     sizes: ['S', 'M', 'L', 'XL', 'XXL']
-    // }
+    const handleSizeFilter = (value, id, sz, isSize) => {
+        let all = [...checked];
+        let filter1 = [...filterList];
+        console.log(sz)
+
+        if (isSize) {
+            // Handle color checkboxes
+            if (value) {
+                all.push(id);
+                filter1.push(sz);
+                setSelectedSizes([...selectedSizes, sz]);
+            } else {
+                all = all.filter((c) => c !== id);
+                filter1 = filter1.filter((c) => c !== sz);
+                setSelectedSizes(selectedSizes.filter((s) => s !== sz));
+            }
+        } else {
+            // Handle other filters
+            if (value) {
+                all.push(id);
+                filter1.push(sz);
+            } else {
+                all = all.filter((c) => c !== id);
+                filter1 = filter1.filter((c) => c !== size);
+            }
+        }
+
+        setChecked(all);
+        setFilter1(filter1);
+    };
+
+    useEffect(() => {
+        if (checked.length === 0) {
+            getAllProducts();
+        } else {
+            filterProduct();
+        }
+    }, [checked]);
+
+    useEffect(() => {
+        if (radio.length === 0) {
+            getAllProducts();
+        } else {
+            filterProduct();
+        }
+        window.scrollTo(0, 0);
+    }, [radio]);
+
+
+    //get filterd product
+    const filterProduct = async () => {
+        setLoading(true)
+        try {
+            const { data } = await axios.post("/api/v1/product-filters", {
+                checked,
+                radio,
+                selectedColors,
+                selectedSizes
+            });
+            setProducts(data?.products);
+            setFilterCheck(false);
+            console.log(products)
+            setLoading(false)
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const removeSingleFilter = (filter) => {
+        const updatedChecked = checked.splice(filter)
+        setChecked(updatedChecked);
+        const updatedFilter = filterList.filter((f) => f !== filter);
+        setFilter1(updatedFilter);
+        filterProduct();
+    };
+
+    const handleAddToWishlist = (p) => {
+        setLiked(!liked)
+        console.log(liked)
+        setWishlist([...wishlist, p]);
+        localStorage.setItem(
+            "wishlist",
+            JSON.stringify([...wishlist, p])
+        );
+        toast.success("Item Added to Wishlist");
+    };
+
+    const color = {
+        colors: ['red', 'yellow']
+    }
+    const size = {
+        sizes: ['S', 'M', 'L', 'XL', 'XXL']
+    }
     return (
         <>
             <ToastContainer />
-            {/* <div className='grid grid-cols-7 pt-20 w-full z-20 px-5 fixed bg-white shadow-lg py-2'>
+            <div className='grid grid-cols-7 pt-20 w-full z-20 px-5 fixed bg-white shadow-lg py-2'>
                 <div className='col-span-2 grid grid-rows-2'>
                     <div><Link href="/">Home</Link><Link href={pathname}>{pathname}</Link></div>
                     <div>(200) Products</div>
@@ -623,7 +623,7 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-            </div>} */}
+            </div>}
         </>
     )
 }
