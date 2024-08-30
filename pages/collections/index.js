@@ -234,80 +234,81 @@ const Index = () => {
     return (
         <>
             <ToastContainer />
-            <div className='grid grid-cols-7 pt-20 w-full z-20 px-5 fixed bg-white shadow-lg py-2'>
-                <div className='col-span-2 grid grid-rows-2'>
-                    <div><Link href="/">Home</Link><Link href={pathname}>{pathname}</Link></div>
-                    <div>(200) Products</div>
-                </div>
-                <div className='col-span-4 grid grid-cols-7'>
-                    {filterList?.map((f, index) => (
-                        <div
-                            className="[word-wrap: break-word] w-20 my-[5px] flex h-[32px] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none active:bg-[#cacfd1]"
-                            key={index}
-                        >
-                            {f}
-                            <button onClick={() => removeSingleFilter(f)}>
-                                <span
-                                    data-te-chip-close
-                                    className="float-right w-4 cursor-pointer pl-[8px] text-[16px] text-[#afafaf] opacity-[.53] transition-all duration-200 ease-in-out hover:text-[#8b8b8b]"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth="1.5"
-                                        stroke="currentColor"
-                                        className="h-3 w-3"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    ))}
-                </div>
-                <div className='col-span-1'>
-                    <div className="relative" data-te-dropdown-ref>
-                        <button
-                            className="flex items-center whitespace-nowrap rounded bg-primary px-7 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
-                            type="button"
-                            id="dropdownMenuButton1"
-                            data-te-dropdown-toggle-ref
-                            aria-expanded={isDropdownOpen}
-                            onClick={handleDropdownToggle}
-                        >
-                            Categories
-                            <span className="ml-2 w-2">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    className="h-5 w-5"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </span>
-                        </button>
-                        <ul
-                            className={`absolute z-[1000] w-36 float-left m-0 list-none overflow-hidden rounded-lg border-none  bg-white bg-clip-padding text-left text-base shadow-lg ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-200 `}
-                        >
-                            {categories?.map((c, index) => (
-                                <li key={index}>
-                                    <Link href={`/search/category/${c.slug}`}
-                                        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-800 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:text-neutral-400"
-                                    >
-                                        {c && c.catName}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <h1>products</h1>
+            // <div className='grid grid-cols-7 pt-20 w-full z-20 px-5 fixed bg-white shadow-lg py-2'>
+            //     <div className='col-span-2 grid grid-rows-2'>
+            //         <div><Link href="/">Home</Link><Link href={pathname}>{pathname}</Link></div>
+            //         <div>(200) Products</div>
+            //     </div>
+            //     <div className='col-span-4 grid grid-cols-7'>
+            //         {filterList?.map((f, index) => (
+            //             <div
+            //                 className="[word-wrap: break-word] w-20 my-[5px] flex h-[32px] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none active:bg-[#cacfd1]"
+            //                 key={index}
+            //             >
+            //                 {f}
+            //                 <button onClick={() => removeSingleFilter(f)}>
+            //                     <span
+            //                         data-te-chip-close
+            //                         className="float-right w-4 cursor-pointer pl-[8px] text-[16px] text-[#afafaf] opacity-[.53] transition-all duration-200 ease-in-out hover:text-[#8b8b8b]"
+            //                     >
+            //                         <svg
+            //                             xmlns="http://www.w3.org/2000/svg"
+            //                             fill="none"
+            //                             viewBox="0 0 24 24"
+            //                             strokeWidth="1.5"
+            //                             stroke="currentColor"
+            //                             className="h-3 w-3"
+            //                         >
+            //                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            //                         </svg>
+            //                     </span>
+            //                 </button>
+            //             </div>
+            //         ))}
+            //     </div>
+            //     <div className='col-span-1'>
+            //         <div className="relative" data-te-dropdown-ref>
+            //             <button
+            //                 className="flex items-center whitespace-nowrap rounded bg-primary px-7 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            //                 type="button"
+            //                 id="dropdownMenuButton1"
+            //                 data-te-dropdown-toggle-ref
+            //                 aria-expanded={isDropdownOpen}
+            //                 onClick={handleDropdownToggle}
+            //             >
+            //                 Categories
+            //                 <span className="ml-2 w-2">
+            //                     <svg
+            //                         xmlns="http://www.w3.org/2000/svg"
+            //                         viewBox="0 0 20 20"
+            //                         fill="currentColor"
+            //                         className="h-5 w-5"
+            //                     >
+            //                         <path
+            //                             fillRule="evenodd"
+            //                             d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            //                             clipRule="evenodd"
+            //                         />
+            //                     </svg>
+            //                 </span>
+            //             </button>
+            //             <ul
+            //                 className={`absolute z-[1000] w-36 float-left m-0 list-none overflow-hidden rounded-lg border-none  bg-white bg-clip-padding text-left text-base shadow-lg ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-200 `}
+            //             >
+            //                 {categories?.map((c, index) => (
+            //                     <li key={index}>
+            //                         <Link href={`/search/category/${c.slug}`}
+            //                             className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-800 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:text-neutral-400"
+            //                         >
+            //                             {c && c.catName}
+            //                         </Link>
+            //                     </li>
+            //                 ))}
+            //             </ul>
+            //         </div>
+            //     </div>
+            // </div>
              // <div className="lg:grid lg:grid-cols-10 py-36">
              //    <div className='lg:col-span-2'>
              //        <nav
