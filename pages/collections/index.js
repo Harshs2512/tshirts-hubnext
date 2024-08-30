@@ -1,17 +1,20 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import Link from 'next/link'
-import { UilHeartAlt, UilFilter, UilSort } from '@iconscout/react-unicons'
-import { Checkbox, Radio, Spin } from 'antd'
-import axios from 'axios'
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-// import { useWishlist } from '../../context/wishlist'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { usePathname } from 'next/navigation'
-
-
+// import Link from 'next/link'
+// import { UilHeartAlt, UilFilter, UilSort } from '@iconscout/react-unicons'
+// import { Checkbox, Radio, Spin } from 'antd'
+// import axios from 'axios'
+// import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+// // import { useWishlist } from '../../context/wishlist'
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { usePathname } from 'next/navigation'
 
 const Index = () => {
+return (<h1>Hii</h1>)
+}
+export default Index
+
+// const Index = () => {
     // const Prices = [
     //     {
     //         _id: 0,
@@ -231,10 +234,10 @@ const Index = () => {
     // const size = {
     //     sizes: ['S', 'M', 'L', 'XL', 'XXL']
     // }
-    return (
-        <>
-            <ToastContainer />
-        <h1>products</h1>
+    // return (
+    //     <>
+    //         <ToastContainer />
+    //     <h1>products</h1>
             // <div className='grid grid-cols-7 pt-20 w-full z-20 px-5 fixed bg-white shadow-lg py-2'>
             //     <div className='col-span-2 grid grid-rows-2'>
             //         <div><Link href="/">Home</Link><Link href={pathname}>{pathname}</Link></div>
@@ -625,9 +628,9 @@ const Index = () => {
                     </div>
                 </div>
             </div>} */}
-        </>
-    )
-}
+//         </>
+//     )
+// }
 
 
-export default Index;
+// export default Index;
