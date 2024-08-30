@@ -240,7 +240,7 @@ const Index = () => {
                     <div>(200) Products</div>
                 </div>
                 <div className='col-span-4 grid grid-cols-7'>
-                    {filterList && filterList.map((f, index) => (
+                    {filterList?.map((f, index) => (
                         <div
                             className="[word-wrap: break-word] w-20 my-[5px] flex h-[32px] cursor-pointer items-center justify-between rounded-[16px] bg-[#eceff1] px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none active:bg-[#cacfd1]"
                             key={index}
@@ -295,7 +295,7 @@ const Index = () => {
                         <ul
                             className={`absolute z-[1000] w-36 float-left m-0 list-none overflow-hidden rounded-lg border-none  bg-white bg-clip-padding text-left text-base shadow-lg ${isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} transition-opacity duration-200 `}
                         >
-                            {categories && categories.map((c, index) => (
+                            {categories?.map((c, index) => (
                                 <li key={index}>
                                     <Link href={`/search/category/${c.slug}`}
                                         className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-800 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:text-neutral-400"
@@ -352,7 +352,7 @@ const Index = () => {
                                         </span>
                                     </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosetheme ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        {categories && categories.map((c, index) => (
+                                        {categories?.map((c, index) => (
                                             <Checkbox key={index}
                                                 onChange={(e) => handleFilter(e.target.checked, c._id, c.catName,)} id='check'>
                                                 {c.catName}
@@ -383,7 +383,7 @@ const Index = () => {
                                     </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosecolor ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {color &&
-                                            color.colors.map((c, index) => (
+                                            color?.colors?.map((c, index) => (
                                                 <Checkbox
                                                     key={index}
                                                     onChange={(e) =>
@@ -419,7 +419,7 @@ const Index = () => {
                                     </div>
                                     <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosesize ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
                                         {size &&
-                                            size.sizes.map((sz, index) => (
+                                            size?.sizes?.map((sz, index) => (
                                                 <Checkbox
                                                     key={index}
                                                     onChange={(e) =>
@@ -476,7 +476,7 @@ const Index = () => {
                                         <Spin size="large" />
                                     </div>
                                 ) : (<>
-                                    {products && products.map((p, index) => (
+                                    {products?.map((p, index) => (
                                         <div
                                             key={index} className="block bg-gray-100/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-hidden overflow-y-hidden">
                                             <Link href={`/product/${p.slug}`}>
