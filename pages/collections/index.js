@@ -519,7 +519,7 @@ const Index = () => {
             //             <button type="button" className="text-gray-800 hover:text-blue-700 border-l border-gray-900 hover:bg-gray-900 font-medium text-sm px-10  text-center py-1 flex justify-center"><span className="mr-3"><UilSort /></span> SORT</button>
             //         </div>
             //     </div>
-            // </div>
+            </div>
             {/*{isFilter && <div
                 id="defaultModal"
                 tabIndex="-1"
