@@ -308,218 +308,218 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-             <div className="lg:grid lg:grid-cols-10 py-36">
-                <div className='lg:col-span-2'>
-                    <nav
-                        id="sidenav-2"
-                        className="hidden lg:block lg:top-36 lg:bottom-0 lg:left-0 w-60 overflow-hidden translate-x-0 "
-                        data-te-sidenav-init
-                        data-te-sidenav-hidden="false"
-                        data-te-sidenav-mode="side"
-                        data-te-sidenav-content="#content"
-                    >
-                        <div className=' m-0 list-none px-[0.2rem] flex border-b-2 border-stone-300 bg-white'>
-                            <h1 className='text-center mt-3 m-2 flex'>FILLTERS
-                            </h1>
-                            <button class="bg-transparent hover:bg-purple-300 text-purple-700 font-semibold hover:text-white py-1 px-4 border border-purple-500 hover:border-transparent rounded ml-20 m-2" onClick={() => window.location.reload()}>
-                                Clear
-                            </button>
-                        </div>
-                        <div className="h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
-                            <ul className=" m-0 list-none bg-white">
-                                <li className="relative border-b-2 border-stone-300 h-full">
+             // <div className="lg:grid lg:grid-cols-10 py-36">
+             //    <div className='lg:col-span-2'>
+             //        <nav
+             //            id="sidenav-2"
+             //            className="hidden lg:block lg:top-36 lg:bottom-0 lg:left-0 w-60 overflow-hidden translate-x-0 "
+             //            data-te-sidenav-init
+             //            data-te-sidenav-hidden="false"
+             //            data-te-sidenav-mode="side"
+             //            data-te-sidenav-content="#content"
+             //        >
+             //            <div className=' m-0 list-none px-[0.2rem] flex border-b-2 border-stone-300 bg-white'>
+             //                <h1 className='text-center mt-3 m-2 flex'>FILLTERS
+             //                </h1>
+             //                <button class="bg-transparent hover:bg-purple-300 text-purple-700 font-semibold hover:text-white py-1 px-4 border border-purple-500 hover:border-transparent rounded ml-20 m-2" onClick={() => window.location.reload()}>
+             //                    Clear
+             //                </button>
+             //            </div>
+             //            <div className="h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
+             //                <ul className=" m-0 list-none bg-white">
+             //                    <li className="relative border-b-2 border-stone-300 h-full">
 
-                                    <div
-                                        className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none "
-                                        onClick={handleClosetheme}
-                                    >
-                                        <span>Theme</span>
+             //                        <div
+             //                            className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none "
+             //                            onClick={handleClosetheme}
+             //                        >
+             //                            <span>Theme</span>
 
 
-                                        <span className="ml-32 w-2">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                className="h-5 w-5"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosetheme ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        {categories?.map((c, index) => (
-                                            <Checkbox key={index}
-                                                onChange={(e) => handleFilter(e.target.checked, c._id, c.catName,)} id='check'>
-                                                {c.catName}
-                                            </Checkbox>
-                                        ))}
-                                    </div>
-                                </li>
-                                <li className="border-b-2 border-stone-300">
-                                    <div
-                                        className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
-                                        onClick={handleClosecolor}
-                                    >
-                                        <span>Colors</span>
-                                        <span className="ml-[132px] w-2">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                className="h-5 w-5"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosecolor ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        {color &&
-                                            color?.colors?.map((c, index) => (
-                                                <Checkbox
-                                                    key={index}
-                                                    onChange={(e) =>
-                                                        handleFilter(e.target.checked, c, c, c, true)
-                                                    }
-                                                    checked={selectedColors.includes(c)}
-                                                >
-                                                    {c}
-                                                </Checkbox>
-                                            ))}
-                                    </div>
-                                </li>
-                                <li className="relative border-b-2 border-stone-300">
-                                    <div
-                                        className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
-                                        onClick={handleClosesize}
-                                    >
-                                        <span>Size</span>
-                                        <span className="ml-[150px] w-2">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                className="h-5 w-5"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosesize ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        {size &&
-                                            size?.sizes?.map((sz, index) => (
-                                                <Checkbox
-                                                    key={index}
-                                                    onChange={(e) =>
-                                                        handleSizeFilter(e.target.checked, sz, sz, sz, true)
-                                                    }
-                                                    checked={selectedSizes.includes(sz)}
-                                                >
-                                                    {sz}
-                                                </Checkbox>
-                                            ))}
-                                    </div>
-                                </li>
-                                <li className="relative border-b-2 border-stone-300">
-                                    <div
-                                        className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
-                                        onClick={handleCloseprice}
-                                    >
-                                        <span>Price</span>
-                                        <span className="ml-36 w-2">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                className="h-5 w-5"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isCloseprice ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
-                                        <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-                                            {Prices?.map((p, index) => (
-                                                <div key={index}>
-                                                    <Radio value={p.array}>{p.name}</Radio>
-                                                </div>
-                                            ))}
-                                        </Radio.Group>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div className="lg:col-span-8 px-1 text-center" id="content">
-                     <div className="flex text-start">
-                        <div>
-                            <div className='grid lg:grid-cols-4 xs:grid-cols-2 gap-2'>
-                                {loading ? ( // Render loading indicator when loading is true
-                                    <div className="flex ml-[25rem] mt-40 h-screen">
-                                        <Spin size="large" />
-                                    </div>
-                                ) : (<>
-                                    {products?.map((p, index) => (
-                                        <div
-                                            key={index} className="block bg-gray-100/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-hidden overflow-y-hidden">
-                                            <Link href={`/product/${p.slug}`}>
-                                                <button disabled={!wishlist.find((item) => item._id === p._id) ? false : true} className="relative rounded-full w-10 h-10 p-2 bg-gray-200/50 top-[2%] xs:left-[72%] sm:left-[78%] left-[70%] hover:bg-white duration-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] z-10"
-                                                    onClick={() => { handleAddToWishlist(p) }}>
-                                                    <UilHeartAlt className={`${wishlist.find((item) => item._id === p._id) ? 'text-red-500 animate-jump-in animate-delay-300 animate-once ' : 'text-gray-500'} `} />
-                                                </button>
-                                                <img
-                                                    className="object-cover transition-transform duration-300 transform hover:scale-125 hover:rotate-6 -mt-10 w-80 h-80 bg-gray-500"
-                                                    src={`http://localhost:8000/api/v1/product-photo/${p._id}`}
-                                                    alt="" />
-                                                <div className='px-2 py-3 mt-1 overflow-hidden relative bg-white'>
-                                                    <h5 className='mb-1 md:text-lg text-md font-medium leading-tight text-neutral-800'>
-                                                        {p && p.title}
-                                                    </h5>
-                                                    <p className='mb-1 md:text-sm text-sm text-neutral-600'>
-                                                        {p && p.category.catName}
-                                                    </p>
-                                                    <hr />
-                                                </div>
-                                                <div className='flex px-2'>
-                                                    <p className='mb-2 text-base font-bold text-neutral-900'>
-                                                        ₹ 599
-                                                    </p>
-                                                    <p className='mt-1 ml-4 font-semibold text-sm line-through text-gray-400'>
-                                                        ₹ 999
-                                                    </p>
-                                                    <p className='ml-4 font-semibold text-base text-green-500'>
-                                                        20%
-                                                    </p>
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    ))}</>)}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="fixed bottom-0 left-0 right-0 bg-white py-1 lg:hidden z-50 grid grid-cols-2">
-                        <button type="button" className="text-gray-800 hover:text-blue-700 border-r border-gray-900 hover:bg-gray-900 font-medium text-sm px-10  text-center py-1 flex justify-center" onClick={setIsFilter}><span className="mr-3 "><UilFilter /></span> FILTER</button>
-                        <button type="button" className="text-gray-800 hover:text-blue-700 border-l border-gray-900 hover:bg-gray-900 font-medium text-sm px-10  text-center py-1 flex justify-center"><span className="mr-3"><UilSort /></span> SORT</button>
-                    </div>
-                </div>
-            </div>
+             //                            <span className="ml-32 w-2">
+             //                                <svg
+             //                                    xmlns="http://www.w3.org/2000/svg"
+             //                                    viewBox="0 0 20 20"
+             //                                    fill="currentColor"
+             //                                    className="h-5 w-5"
+             //                                >
+             //                                    <path
+             //                                        fillRule="evenodd"
+             //                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+             //                                        clipRule="evenodd"
+             //                                    />
+             //                                </svg>
+             //                            </span>
+             //                        </div>
+             //                        <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosetheme ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
+             //                            {categories?.map((c, index) => (
+             //                                <Checkbox key={index}
+             //                                    onChange={(e) => handleFilter(e.target.checked, c._id, c.catName,)} id='check'>
+             //                                    {c.catName}
+             //                                </Checkbox>
+             //                            ))}
+             //                        </div>
+             //                    </li>
+             //                    <li className="border-b-2 border-stone-300">
+             //                        <div
+             //                            className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
+             //                            onClick={handleClosecolor}
+             //                        >
+             //                            <span>Colors</span>
+             //                            <span className="ml-[132px] w-2">
+             //                                <svg
+             //                                    xmlns="http://www.w3.org/2000/svg"
+             //                                    viewBox="0 0 20 20"
+             //                                    fill="currentColor"
+             //                                    className="h-5 w-5"
+             //                                >
+             //                                    <path
+             //                                        fillRule="evenodd"
+             //                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+             //                                        clipRule="evenodd"
+             //                                    />
+             //                                </svg>
+             //                            </span>
+             //                        </div>
+             //                        <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosecolor ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
+             //                            {color &&
+             //                                color?.colors?.map((c, index) => (
+             //                                    <Checkbox
+             //                                        key={index}
+             //                                        onChange={(e) =>
+             //                                            handleFilter(e.target.checked, c, c, c, true)
+             //                                        }
+             //                                        checked={selectedColors.includes(c)}
+             //                                    >
+             //                                        {c}
+             //                                    </Checkbox>
+             //                                ))}
+             //                        </div>
+             //                    </li>
+             //                    <li className="relative border-b-2 border-stone-300">
+             //                        <div
+             //                            className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
+             //                            onClick={handleClosesize}
+             //                        >
+             //                            <span>Size</span>
+             //                            <span className="ml-[150px] w-2">
+             //                                <svg
+             //                                    xmlns="http://www.w3.org/2000/svg"
+             //                                    viewBox="0 0 20 20"
+             //                                    fill="currentColor"
+             //                                    className="h-5 w-5"
+             //                                >
+             //                                    <path
+             //                                        fillRule="evenodd"
+             //                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+             //                                        clipRule="evenodd"
+             //                                    />
+             //                                </svg>
+             //                            </span>
+             //                        </div>
+             //                        <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isClosesize ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
+             //                            {size &&
+             //                                size?.sizes?.map((sz, index) => (
+             //                                    <Checkbox
+             //                                        key={index}
+             //                                        onChange={(e) =>
+             //                                            handleSizeFilter(e.target.checked, sz, sz, sz, true)
+             //                                        }
+             //                                        checked={selectedSizes.includes(sz)}
+             //                                    >
+             //                                        {sz}
+             //                                    </Checkbox>
+             //                                ))}
+             //                        </div>
+             //                    </li>
+             //                    <li className="relative border-b-2 border-stone-300">
+             //                        <div
+             //                            className="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-3 py-4 text-lg text-gray-900 outline-none transition duration-300 ease-linear hover:bg-slate-100 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:text-inherit active:outline-none motion-reduce:transition-none"
+             //                            onClick={handleCloseprice}
+             //                        >
+             //                            <span>Price</span>
+             //                            <span className="ml-36 w-2">
+             //                                <svg
+             //                                    xmlns="http://www.w3.org/2000/svg"
+             //                                    viewBox="0 0 20 20"
+             //                                    fill="currentColor"
+             //                                    className="h-5 w-5"
+             //                                >
+             //                                    <path
+             //                                        fillRule="evenodd"
+             //                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+             //                                        clipRule="evenodd"
+             //                                    />
+             //                                </svg>
+             //                            </span>
+             //                        </div>
+             //                        <div className={`px-10 py-2 grid grid-flow-row gap-3 transition-[opacity,margin] duration-100 ${isCloseprice ? 'opacity-100' : 'opacity-0 max-h-0 pointer-events-none'}`}>
+             //                            <Radio.Group onChange={(e) => setRadio(e.target.value)}>
+             //                                {Prices?.map((p, index) => (
+             //                                    <div key={index}>
+             //                                        <Radio value={p.array}>{p.name}</Radio>
+             //                                    </div>
+             //                                ))}
+             //                            </Radio.Group>
+             //                        </div>
+             //                    </li>
+             //                </ul>
+             //            </div>
+             //        </nav>
+             //    </div>
+            //     <div className="lg:col-span-8 px-1 text-center" id="content">
+            //          <div className="flex text-start">
+            //             <div>
+            //                 <div className='grid lg:grid-cols-4 xs:grid-cols-2 gap-2'>
+            //                     {loading ? ( // Render loading indicator when loading is true
+            //                         <div className="flex ml-[25rem] mt-40 h-screen">
+            //                             <Spin size="large" />
+            //                         </div>
+            //                     ) : (<>
+            //                         {products?.map((p, index) => (
+            //                             <div
+            //                                 key={index} className="block bg-gray-100/50 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] overflow-hidden overflow-y-hidden">
+            //                                 <Link href={`/product/${p.slug}`}>
+            //                                     <button disabled={!wishlist.find((item) => item._id === p._id) ? false : true} className="relative rounded-full w-10 h-10 p-2 bg-gray-200/50 top-[2%] xs:left-[72%] sm:left-[78%] left-[70%] hover:bg-white duration-200 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] z-10"
+            //                                         onClick={() => { handleAddToWishlist(p) }}>
+            //                                         <UilHeartAlt className={`${wishlist.find((item) => item._id === p._id) ? 'text-red-500 animate-jump-in animate-delay-300 animate-once ' : 'text-gray-500'} `} />
+            //                                     </button>
+            //                                     <img
+            //                                         className="object-cover transition-transform duration-300 transform hover:scale-125 hover:rotate-6 -mt-10 w-80 h-80 bg-gray-500"
+            //                                         src={`http://localhost:8000/api/v1/product-photo/${p._id}`}
+            //                                         alt="" />
+            //                                     <div className='px-2 py-3 mt-1 overflow-hidden relative bg-white'>
+            //                                         <h5 className='mb-1 md:text-lg text-md font-medium leading-tight text-neutral-800'>
+            //                                             {p && p.title}
+            //                                         </h5>
+            //                                         <p className='mb-1 md:text-sm text-sm text-neutral-600'>
+            //                                             {p && p.category.catName}
+            //                                         </p>
+            //                                         <hr />
+            //                                     </div>
+            //                                     <div className='flex px-2'>
+            //                                         <p className='mb-2 text-base font-bold text-neutral-900'>
+            //                                             ₹ 599
+            //                                         </p>
+            //                                         <p className='mt-1 ml-4 font-semibold text-sm line-through text-gray-400'>
+            //                                             ₹ 999
+            //                                         </p>
+            //                                         <p className='ml-4 font-semibold text-base text-green-500'>
+            //                                             20%
+            //                                         </p>
+            //                                     </div>
+            //                                 </Link>
+            //                             </div>
+            //                         ))}</>)}
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <div className="fixed bottom-0 left-0 right-0 bg-white py-1 lg:hidden z-50 grid grid-cols-2">
+            //             <button type="button" className="text-gray-800 hover:text-blue-700 border-r border-gray-900 hover:bg-gray-900 font-medium text-sm px-10  text-center py-1 flex justify-center" onClick={setIsFilter}><span className="mr-3 "><UilFilter /></span> FILTER</button>
+            //             <button type="button" className="text-gray-800 hover:text-blue-700 border-l border-gray-900 hover:bg-gray-900 font-medium text-sm px-10  text-center py-1 flex justify-center"><span className="mr-3"><UilSort /></span> SORT</button>
+            //         </div>
+            //     </div>
+            // </div>
             {/*{isFilter && <div
                 id="defaultModal"
                 tabIndex="-1"
