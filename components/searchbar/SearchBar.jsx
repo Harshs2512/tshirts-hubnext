@@ -34,7 +34,7 @@ const SearchBar = () => {
     return (
         <div>
             <form role="search" onSubmit={handleSubmit}>
-                <div className="relative mb-5 hidden lg:flex md:w-full flex-wrap items-stretch group:">
+                <div className="relative hidden lg:flex md:w-full flex-wrap items-stretch group:">
                     <input
                         id="inputbar"
                         type="search"

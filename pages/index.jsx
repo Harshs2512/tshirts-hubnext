@@ -3,10 +3,8 @@ import { Montserrat } from "next/font/google";
 import { Fragment } from "react";
 import { NextSeo } from "next-seo";
 import { usePathname } from "next/navigation";
-import { UilHeartAlt, UilSearchAlt, UilShoppingCartAlt, UilTruck, UilCheckCircle } from '@iconscout/react-unicons'
 import Link from "next/link";
 import Hero from "@/components/landing/Hero";
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import ImageGallery from "@/components/landing/ImageGallery";
 import Categories from "@/components/landing/CategoryCarousel";
 
@@ -18,12 +16,6 @@ const Home = () => {
   const title = "Tshirts hub Indias favirut brand";
   const description = "Upgrade your wardrobe with our Classic Cotton T-Shirt, Link staple for any occasion. Crafted from 100% soft, breathable cotton, this tee ensures all-day comfort and durability. Featuring Link timeless design and available in various colors, it's perfect for layering or wearing on its own. Whether you're heading to Link casual outing or relaxing at home, this t-shirt is your go-to choice for effortless style.";
   const keywords = "T-shirts for men, T-shirts for women, Cotton t-shirts, Graphic tees, Casual t-shirts, Comfortable t-shirts, Affordable t-shirts, Trendy t-shirts Stylish t-shirts High-quality t-shirts Summer t-shirts Soft cotton tees Unisex t-shirts V-neck t-shirts Crew neck t-shirts Plain t-shirts Printed t-shirts Fashionable t-shirts Everyday t-shirts Eco-friendly t-shirts";
-  const scrollLeft = () => {
-    document.getElementById("img").scrollLeft -= 440;
-  };
-  const scrollRight = () => {
-    document.getElementById("img").scrollLeft += 440;
-  };
   return (
     <Fragment>
       <NextSeo
@@ -61,7 +53,7 @@ const Home = () => {
         <Hero />
 
         {/* New Arrivals */}
-        <div className="max-w-[1800px] mt-4 md:mt-10 lg:mt-20 px-0 md:px-5 lg:px-10">
+        <div className="container mx-auto">
           {/* NEW ARRIVALS */}
           <h1 className='text-3xl font-bold tracking-widest text-center py-10 text-[#7570ff] mt-9 uppercase'>New Arrivals</h1>
           <div className='grid md:grid-cols-3 xs:grid-cols-2 lg:grid-cols-4 md:gap-7 gap-1 gap-y-5 px-5'>
@@ -108,7 +100,7 @@ const Home = () => {
         <ImageGallery mlenght={[1, 1, 1, 1, 1, 1, 1, 1, 1]} />
 
         {/* Best Selling */}
-        <div className="max-w-[1800px] mt-4 md:mt-10 lg:mt-20 px-0 md:px-5 lg:px-10">
+        <div className="container mx-auto">
           {/* NEW ARRIVALS */}
           <h1 className='text-3xl font-bold tracking-widest text-center py-10 text-[#7570ff] mt-9 uppercase'>Best Selling</h1>
           <div className='grid md:grid-cols-3 xs:grid-cols-2 lg:grid-cols-4 md:gap-7 gap-1 gap-y-5 px-5'>
@@ -151,37 +143,33 @@ const Home = () => {
           </div>
         </div>
 
-        {/* trending section */}
-        <div className="mt-4 md:mt-7 lg:mt-10 max-w-[1800px] px-2 md:px-5 lg:px-10">
-          <h1 className='text-3xl font-bold tracking-widest text-center py-10 text-[#7570ff] mt-9 uppercase'>TRENDING NOW</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        {/* Trending Section */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className='text-3xl font-bold tracking-widest text-center py-10 text-[#7570ff] uppercase'>TRENDING NOW</h1>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {[1, 2, 3, 4].map((item, index) => (
               <div
                 key={index}
-                className="max-w-sm bg-center rounded-lg bg-cover bg-no-repeat bg-[url('/images/1_Tees.webp')] bg-gray-700 transform transition-transform duration-500 hover:scale-105 hover:shadow-xl"
+                className="bg-center rounded-lg bg-cover bg-no-repeat bg-[url('/images/1_Tees.webp')] transform transition-transform duration-500 hover:scale-105 hover:shadow-xl text-center py-4 lg:py-6"
               >
-                <div className="px-1 max-w-screen-xl text-center py-1 lg:py-2">
-                  <div className="flex py-24 lg:py-48 flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                    <Link
-                      href="#"
-                      className="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white
-                         rounded-lg border border-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400 
-                         transition-colors duration-300"
-                    >
-                      View All
-                    </Link>
-                  </div>
-                  <h1 className="mb-4 text-xl font-extrabold tracking-tight leading-none text-white md:text-1xl lg:text-2xl">
-                    Goku Tshirt
-                  </h1>
+                <div className="flex justify-center py-4 lg:py-24">
+                  <Link
+                    href="#"
+                    className="inline-flex justify-center items-center py-2 px-4 lg:px-6 text-sm lg:text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400 transition-colors duration-300"
+                  >
+                    View All
+                  </Link>
                 </div>
+                <h1 className="mt-4 text-lg lg:text-xl font-extrabold tracking-tight leading-none text-white">
+                  Goku Tshirt
+                </h1>
               </div>
             ))}
           </div>
         </div>
 
         {/* banner for ad */}
-        <div className="mt-4 md:mt-10 lg:mt-20 max-w-[1800px] px-2 md:px-5 lg:px-10">
+        <div className="mt-4 md:mt-10 lg:mt-16 container mx-auto px-5">
           <Link href={"#"}>
             <div
               className="max-h-xl bg-gray-700 hover:shadow-xl rounded-xl"
@@ -192,10 +180,12 @@ const Home = () => {
         </div>
 
         {/* all categories */}
-        <Categories />
+        <div className="mx-5">
+          <Categories />
+        </div>
 
         {/* Recent */}
-        <div className="max-w-[1800px] mt-4 md:mt-10 lg:mt-20 px-0 md:px-5 lg:px-10">
+        <div className="mt-4 md:mt-10 lg:mt-16 container mx-auto">
           {/* NEW ARRIVALS */}
           <h1 className='text-3xl font-bold tracking-widest text-center py-10 text-[#7570ff] mt-9 uppercase'>Recent Search</h1>
           <div className='grid md:grid-cols-3 xs:grid-cols-2 lg:grid-cols-4 md:gap-7 gap-1 gap-y-5 px-5'>
