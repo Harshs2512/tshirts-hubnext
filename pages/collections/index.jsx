@@ -633,7 +633,7 @@ const ProductsPage = () => {
                     </div>
 
                     {/* Price Range Filter */}
-                    <div className="mb-4">
+                    <div className="mb-4">jjheduemjhjuajudjkjdhufsfahjhfbsadjfbhjsdfhgfjaeyf jasfhhasdjf ajdhhvas
                         <h3 className="font-semibold mb-2">Price Range</h3>
                         <input
                             type="range"

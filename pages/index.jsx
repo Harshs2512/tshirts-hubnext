@@ -231,5 +231,24 @@ const Home = () => {
     </Fragment>
   );
 }
+export async function getServerSideProps(context) {
+  console.log(context.req)
+  return { props: {} };
+
+  // const isAuthenticated =
+  //     await checkAuth(context.req);
+
+  // if (
+  //     !isAuthenticated &&
+  //     context.resolvedUrl !== '/login'
+  // ){
+  //     context.res
+  //         .writeHead(302, { Location: '/login' });
+  //     context.res.end();
+  //     return { props: {} };
+  // }
+
+  // ...fetch data for authenticated users...
+}
 
 export default Home;
